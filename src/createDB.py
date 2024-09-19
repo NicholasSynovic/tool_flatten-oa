@@ -68,5 +68,10 @@ class DB:
         self.metadata.create_all(bind=self.engine, checkfirst=True)
 
 
-engine: Engine = create_engine(url="sqlite:///test.db")
-db: DB = DB(engine=engine)
+def main() -> None:
+    engine: Engine = create_engine(url="sqlite:///test.db")
+    DB(engine=engine)
+
+
+if __name__ == "__main__":
+    main()
